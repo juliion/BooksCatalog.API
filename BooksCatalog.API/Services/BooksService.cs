@@ -54,7 +54,7 @@ namespace BooksCatalog.API.Services
             return bookDto;
         }
 
-        public async Task<IEnumerable<BookDTO>> GetBooks(Guid bookId)
+        public async Task<IEnumerable<BookDTO>> GetBooks()
         {
             var books = await _context.Books.ToListAsync();
 

@@ -7,7 +7,7 @@ namespace BooksCatalog.API.Interfaces
         public Task<Guid> CreateBook(CreateBookDTO bookDTO);
         public Task UpdateBook(Guid id, UpdateBookDTO bookDTO);
         public Task DeleteBook(Guid id);
-        public Task<IEnumerable<BookDTO>> GetBooks(Guid bookId);
+        public Task<IEnumerable<BookDTO>> GetBooks();
         public Task<BookDTO> GetBook(Guid id);
     }
 }
