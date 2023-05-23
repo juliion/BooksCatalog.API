@@ -1,4 +1,6 @@
 using BooksCatalog.API.Data;
+using BooksCatalog.API.Interfaces;
+using BooksCatalog.API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,8 @@ builder.Services.AddSwaggerGen();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<BooksCatalogContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddScoped<IBooksService, BooksService>();
 
 var app = builder.Build();
 
