@@ -1,3 +1,4 @@
+using BooksCatalog.API.Common.Mappings;
 using BooksCatalog.API.Data;
 using BooksCatalog.API.Interfaces;
 using BooksCatalog.API.Services;
@@ -14,6 +15,9 @@ builder.Services.AddSwaggerGen();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<BooksCatalogContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddAutoMapper(typeof(BooksCatalogProfile));
+
 
 builder.Services.AddScoped<IBooksService, BooksService>();
 
